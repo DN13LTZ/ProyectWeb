@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SB Admin 2 - Tables</title>
+    <title>Productos</title>
 
     <!-- Custom fonts for this template -->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -26,6 +26,22 @@
 </head>
 
 <body id="page-top">
+
+<?php
+$dbhost = "localhost";
+$dbuser = "root";
+$dbpass = "";
+$dbname = "proyect";
+
+$conn = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
+if(!$conn){
+    die("No se pudo conectar: ".mysqli_connect_erro());
+}else{
+
+    $sql=mysqli_query($conn, "SELECT * FROM disponible");
+}
+
+?>
 
     <!-- Page Wrapper -->
     <div id="wrapper">
@@ -63,7 +79,7 @@
             <li class="nav-item active">
                 <a class="nav-link" href="tables.html">
                     <i class="fas fa-fw fa-table"></i>
-                    <span>Tables</span></a>
+                    <span>Productos</span></a>
             </li>
             <!-- Linea de División -->
             <hr class="sidebar-divider d-none d-md-block">
@@ -123,39 +139,22 @@
                                             <th>Descripción</th>
                                             <th>Precio</th>
                                             <th>Stock</th>
+                                            <th>Agregar</th>
                                         </tr>
                                     </thead>
-                                    <tfoot>
-                                        <tr>
-                                            <th>No.</th>
-                                            <th>Nombre</th>
-                                            <th>Descripción</th>
-                                            <th>Precio</th>
-                                            <th>Stock</th>
-                                        </tr>
-                                    </tfoot>
                                     <tbody>
-                                        <tr>
-                                            <td>Tiger Nixon</td>
-                                            <td>System Architect</td>
-                                            <td>Edinburgh</td>
-                                            <td>$320,800</td>
-                                            <td>61</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Tiger Nixon</td>
-                                            <td>System Architect</td>
-                                            <td>Edinburgh</td>
-                                            <td>$320,800</td>
-                                            <td>61</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Tiger Nixon</td>
-                                            <td>System Architect</td>
-                                            <td>Edinburgh</td>
-                                            <td>$320,800</td>
-                                            <td>61</td>
-                                        </tr>
+                                        <?php
+                                        while($re = mysqli_fetch_array($sql)){
+                                            echo "<tr>";
+                                            echo "<td>" . $re["id"] . "</td>";
+                                            echo "<td>" . $re["nombre"] . "</td>";
+                                            echo "<td>" . $re["descripcion"] . "</td>";
+                                            echo "<td>" . $re["precio"] . "</td>";
+                                            echo "<td>" . $re["stock"] . "</td>";
+                                            echo "<td> Agregar </td>";
+                                            echo "</tr>";
+                                        }
+                                        ?>
                                     </tbody>
                                 </table>
                             </div>

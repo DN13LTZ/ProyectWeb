@@ -120,29 +120,33 @@
                         <div class="row">
                             <div class="col-lg-12">
                                 <div class="p-5">
-                                    <form class="user" action="" method="POST">
+                                    <form class="user" action="producto.php" method="POST">
                                         <div class="form-group row">
                                             <div class="col-sm-12 mb-6 mb-sm-0">
                                                 <input type="text" class="form-control form-control-user"
-                                                    id="exampleInputText" placeholder="Nombre del Producto" required>
+                                                    id="exampleInputText" placeholder="Nombre del Producto" 
+                                                    name="nombre" required>
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <input type="text" class="form-control form-control-user"
-                                                id="exampleInputText" placeholder="Descrpción del Producto" required>
+                                                id="exampleInputText" placeholder="Descrpción del Producto" 
+                                                name="descripcion" required>
                                         </div>
                                         <div class="form-group row">
                                             <div class="col-sm-6 mb-3 mb-sm-0">
                                                 <input type="number" class="form-control form-control-user"
-                                                    id="exampleInputNumber" placeholder="Precio" required>
+                                                    id="exampleInputNumber" placeholder="Precio" 
+                                                    name="precio" required>
                                             </div>
                                             <div class="col-sm-6 mb-3 mb-sm-0x">
                                                 <input type="number" class="form-control form-control-user"
-                                                    id="exampleInputNumber" placeholder="Cantidad" required>
+                                                    id="exampleInputNumber" placeholder="Cantidad" 
+                                                    name="stock" required>
                                             </div>
                                         </div>
                                         <button type="submit"
-                                            class="btn btn-primary btn-user btn-block">INGRESAR</button>
+                                            class="btn btn-primary btn-user btn-block">REGISTRAR</button>
                                     </form>
                                 </div>
                             </div>

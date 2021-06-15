@@ -8,7 +8,6 @@ $conn = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
 if(!$conn){
     die("No se pudo conectar: ".mysqli_connect_erro());
 } else{
-    echo "Conexion Establecida";
     $nombre = $_POST['nombre'];
     $correo = $_POST['correo'];
     $pass1 = $_POST['pass1'];
@@ -22,7 +21,7 @@ if(!$conn){
             echo "ERROR AL INTRODUCIR LOS DATOS" . mysqli_error($conn);
         }
     } else{
-        echo "las contraseñas no coinciden";
+        echo "Las Contraseñas No Coinciden";
     }
 }
 ?>
