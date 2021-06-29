@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Productos</title>
+    <title>Editar Productos</title>
 
     <!-- Custom fonts for this template -->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -34,12 +34,11 @@ $dbpass = "";
 $dbname = "proyect";
 
 $conn = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
-if(!$conn){
-    die("No se pudo conectar: ".mysqli_connect_erro());
-}else{
 
-    $sql=mysqli_query($conn, "SELECT * FROM disponible");
-}
+$nm = $_GET['nm'];
+
+$verificacion=mysqli_query($conn, "SELECT * FROM disponible WHERE id = '".$nm."'");
+$prueba=mysqli_fetch_array($verificacion);
 
 ?>
 
@@ -67,22 +66,29 @@ if(!$conn){
                     <span>Inicio</span></a>
             </li>
 
-            <!-- Linea de División -->
+            <!-- Divider -->
             <hr class="sidebar-divider">
 
             <!-- Heading -->
             <div class="sidebar-heading">
-                Acciones
+                ACCIONES
             </div>
 
             <!-- Nav Item - Tables -->
             <li class="nav-item active">
-                <a class="nav-link" href="tables.html">
+                <a class="nav-link" href="disponible.php">
                     <i class="fas fa-fw fa-table"></i>
                     <span>Productos</span></a>
             </li>
-            <!-- Linea de División -->
+
+            <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">
+
+            <!-- Sidebar Toggler (Sidebar) -->
+            <div class="text-center d-none d-md-inline">
+                <button class="rounded-circle border-0" id="sidebarToggle"></button>
+            </div>
+
         </ul>
         <!-- End of Sidebar -->
 
@@ -91,24 +97,22 @@ if(!$conn){
 
             <!-- Main Content -->
             <div id="content">
-                <!-- Barra Superior -->
+
+                <!-- Topbar -->
                 <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
-                    <!-- Barra de Navegación -->
+                    <!-- Topbar Navbar -->
                     <ul class="navbar-nav ml-auto">
-                        <!-- Linea de División -->
                         <div class="topbar-divider d-none d-sm-block"></div>
-                        <!-- Información de Usuario -->
+                        <!-- Nav Item - User Information -->
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <span class="mr-2 d-none d-lg-inline text-gray-600 small">Douglas McGee</span>
-                                <img class="img-profile rounded-circle"
-                                    src="img/undraw_profile.svg">
+                                <img class="img-profile rounded-circle" src="img/undraw_profile.svg">
                             </a>
-                            <!-- Opciones de Usuario -->
+                            <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                                 aria-labelledby="userDropdown">
-                                <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
                                     <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Cerrar Sesión
@@ -119,49 +123,47 @@ if(!$conn){
                     </ul>
 
                 </nav>
-                <!-- Fin de la Barra Superior -->
+                <!-- End of Topbar -->
 
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                    <h1 class="h3 mb-2 text-gray-800">PRODUCTOS</h1>
-
-                    <!-- DataTales Example -->
-                    <div class="card shadow mb-4">
-                        <div class="card-body">
-                            <div class="table-responsive">
-                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                                    <thead>
-                                        <tr>
-                                            <th>No.</th>
-                                            <th>Nombre</th>
-                                            <th>Descripción</th>
-                                            <th>Precio</th>
-                                            <th>Stock</th>
-                                            <th>Opciones</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <?php
-                                        while($re = mysqli_fetch_array($sql)){
-                                            echo "<tr>";
-                                            echo "<td>" . $re["id"] . "</td>";
-                                            echo "<td>" . $re["nombre"] . "</td>";
-                                            echo "<td>" . $re["descripcion"] . "</td>";
-                                            echo "<td>" . $re["precio"] . "</td>";
-                                            echo "<td>" . $re["stock"] . "</td>";
-                                            echo "<td>"."<a href='nedit.php?&nm=".$re['id']."'><svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' class='bi bi-pen' viewBox='0 0 16 16'>
-                                            <path d='m13.498.795.149-.149a1.207 1.207 0 1 1 1.707 1.708l-.149.148a1.5 1.5 0 0 1-.059 2.059L4.854 14.854a.5.5 0 0 1-.233.131l-4 1a.5.5 0 0 1-.606-.606l1-4a.5.5 0 0 1 .131-.232l9.642-9.642a.5.5 0 0 0-.642.056L6.854 4.854a.5.5 0 1 1-.708-.708L9.44.854A1.5 1.5 0 0 1 11.5.796a1.5 1.5 0 0 1 1.998-.001zm-.644.766a.5.5 0 0 0-.707 0L1.95 11.756l-.764 3.057 3.057-.764L14.44 3.854a.5.5 0 0 0 0-.708l-1.585-1.585z'/>
-                                            </svg></a>"."<a href='ndelete.php?&nm=".$re['id']."'><svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' class='bi bi-person-x' viewBox='0 0 16 16'>
-                                            <path d='M6 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H1s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C9.516 10.68 8.289 10 6 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z'/>
-                                            <path fill-rule='evenodd' d='M12.146 5.146a.5.5 0 0 1 .708 0L14 6.293l1.146-1.147a.5.5 0 0 1 .708.708L14.707 7l1.147 1.146a.5.5 0 0 1-.708.708L14 7.707l-1.146 1.147a.5.5 0 0 1-.708-.708L13.293 7l-1.147-1.146a.5.5 0 0 1 0-.708z'/>
-                                            </svg></i> </a>". "</td>";
-                                            echo "</tr>";
-                                        }
-                                        ?>
-                                    </tbody>
-                                </table>
+                    <h1 class="h3 mb-2 text-gray-800">EDITAR PRODUCTO</h1>
+                    <div class="card o-hidden border-0 shadow-lg my-5">
+                        <!-- DataTales Example -->
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="p-5">
+                                    <form class="user" action="nedition.php?nm=<?php echo $nm ?>" method="POST">
+                                        <div class="form-group row">
+                                            <div class="col-sm-12 mb-6 mb-sm-0">
+                                                <input type="text" class="form-control form-control-user"
+                                                    id="exampleInputText" value="<?php echo $prueba["nombre"] ?>" placeholder="Nombre del Producto" 
+                                                    name="nombre"  required>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" class="form-control form-control-user"
+                                                id="exampleInputText" value="<?php echo $prueba["descripcion"] ?>" placeholder="Descrpción del Producto" 
+                                                name="descripcion" required>
+                                        </div>
+                                        <div class="form-group row">
+                                            <div class="col-sm-6 mb-3 mb-sm-0">
+                                                <input type="number" class="form-control form-control-user"
+                                                    id="exampleInputNumber" value="<?php echo $prueba["precio"] ?>" placeholder="Precio" 
+                                                    name="precio" required>
+                                            </div>
+                                            <div class="col-sm-6 mb-3 mb-sm-0x">
+                                                <input type="number" class="form-control form-control-user"
+                                                    id="exampleInputNumber" value="<?php echo $prueba["stock"] ?>" placeholder="Cantidad" 
+                                                    name="stock"  required>
+                                            </div>
+                                        </div>
+                                        <button type="submit"
+                                            class="btn btn-primary btn-user btn-block">ACTUALIZAR DATOS</button>
+                                    </form>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -204,7 +206,8 @@ if(!$conn){
                         <span aria-hidden="true">×</span>
                     </button>
                 </div>
-                <div class="modal-body">Seleccione "Cerrar Sesión" a continuación si está listo para finalizar su sesión actual.</div>
+                <div class="modal-body">Seleccione "Cerrar Sesión" a continuación si está listo para finalizar su sesión
+                    actual.</div>
                 <div class="modal-footer">
                     <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
                     <a class="btn btn-primary" href="index.html">Cerrar Sesión</a>
