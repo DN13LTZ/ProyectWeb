@@ -107,7 +107,7 @@ $prueba=mysqli_fetch_array($verificacion);
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Douglas McGee</span>
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">D@N13L TZ...</span>
                                 <img class="img-profile rounded-circle" src="img/undraw_profile.svg">
                             </a>
                             <!-- Dropdown - User Information -->
@@ -150,8 +150,8 @@ $prueba=mysqli_fetch_array($verificacion);
                                         </div>
                                         <div class="form-group row">
                                             <div class="col-sm-6 mb-3 mb-sm-0">
-                                                <input type="number" class="form-control form-control-user"
-                                                    id="exampleInputNumber" value="<?php echo $prueba["precio"] ?>" placeholder="Precio" 
+                                                <input type="text" class="form-control form-control-user"
+                                                    id="exampleInputText" value="<?php echo $prueba["precio"] ?>" placeholder="Precio" 
                                                     name="precio" required>
                                             </div>
                                             <div class="col-sm-6 mb-3 mb-sm-0x">
