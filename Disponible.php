@@ -41,6 +41,14 @@ if(!$conn){
     $sql=mysqli_query($conn, "SELECT * FROM disponible");
 }
 
+
+session_start();
+$correo = $_SESSION['uss'];
+if(!isset($correo)){
+    header("Location: index.html");
+}else{
+}
+
 ?>
 
     <!-- Page Wrapper -->
@@ -62,7 +70,7 @@ if(!$conn){
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item">
-                <a class="nav-link" href="menu.html">
+                <a class="nav-link" href="menu.php">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Inicio</span></a>
             </li>
@@ -101,7 +109,10 @@ if(!$conn){
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">D@N13L TZ...</span>
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">
+                                <?php
+                                    echo($correo)
+                                ?></span>
                                 <img class="img-profile rounded-circle"
                                     src="img/undraw_profile.svg">
                             </a>
@@ -207,7 +218,7 @@ if(!$conn){
                 <div class="modal-body">Seleccione "Cerrar Sesión" a continuación si está listo para finalizar su sesión actual.</div>
                 <div class="modal-footer">
                     <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
-                    <a class="btn btn-primary" href="index.html">Cerrar Sesión</a>
+                    <a class="btn btn-primary" href="exit.php">Cerrar Sesión</a>
                 </div>
             </div>
         </div>

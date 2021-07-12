@@ -52,7 +52,7 @@ if(!isset($correo)){
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item active">
-                <a class="nav-link" href="menu.html">
+                <a class="nav-link" href="menu.php">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>INICIO</span></a>
             </li>
@@ -67,7 +67,7 @@ if(!isset($correo)){
 
             <!-- Acciones de Barra Lateral -->
             <li class="nav-item">
-                <a class="nav-link" href="Registrar.html">
+                <a class="nav-link" href="Registrar.php">
                     <i class="fas fa-fw fa-table"></i>
                     <span>Registar Productos</span></a>
             </li>
@@ -79,7 +79,7 @@ if(!isset($correo)){
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="Ingresar.html">
+                <a class="nav-link" href="Ingresar.php">
                     <i class="fas fa-fw fa-table"></i>
                     <span>Pedido</span></a>
             </li>
