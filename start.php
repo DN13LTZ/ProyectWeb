@@ -1,8 +1,8 @@
 <?php
-$dbhost = "localhost";
-$dbuser = "root";
-$dbpass = "";
-$dbname = "proyect";
+$dbhost = "sql309.epizy.com";
+$dbuser = "epiz_29319014";
+$dbpass = "qD4epbQrwHvk";
+$dbname = "epiz_29319014_proyect";
 
 session_start();
 //Conexion a Base de Datos
