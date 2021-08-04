@@ -2,7 +2,7 @@
 
     session_start();
     session_destroy();
-    header("Location:index.html");
+    header("Location:start1.html");
 
     exit();
 

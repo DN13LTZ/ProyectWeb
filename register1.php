@@ -31,39 +31,55 @@
                 <!-- Nested Row within Card Body -->
                 <div class="row">
                     <div class="col-lg-5 d-none d-lg-block">
-                        <img src="img/D@N13LTZ.png" alt="kali" style="height: 465px;">
+                        <img src="img/login-bg.jpg" alt="kali" style="width: 490px; height: 550px;">
                     </div>
                     <div class="col-lg-7">
                         <div class="p-5">
+                        <?php
+                        if(isset($_GET['estado'])){
+                            $estado = $_GET['estado'];
+                            if($estado==1){
+                                ?>
+                                <a href="#" class="btn btn-danger btn-icon-split">
+                                        <span class="icon text-white-50">
+                                        <i class="fas fa-exclamation-triangle"></i>
+                                        </span>
+                                        <span class="text">Las Contraseñas No Coinciden</span>
+                                    </a>
+                                <?php
+                            }
+                        }
+                        ?><hr>
+
                             <div class="text-center">
                                 <h1 class="h4 text-gray-900 mb-4">Crear Cuenta</h1>
                             </div>
-                            <form class="user" action="registra.php" method="POST">
+                            <form class="user" action="register.php" method="POST">
                                 <div class="form-group row">
                                     <div class="col-sm-12 mb-6 mb-sm-0">
                                         <input type="text" class="form-control form-control-user" id="exampleFirstName"
-                                            placeholder="Ingrese su Nombre" name="nombre">
+                                            placeholder="Ingrese su Nombre" name="nombre" required>
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <input type="email" class="form-control form-control-user" id="exampleInputEmail"
-                                        placeholder="Ingrese su Correo Electronico" name="correo">
+                                        placeholder="Ingrese su Correo Electronico" name="correo" required>
                                 </div>
                                 <div class="form-group row">
                                     <div class="col-sm-6 mb-3 mb-sm-0">
                                         <input type="password" class="form-control form-control-user"
-                                            id="exampleInputPassword" placeholder="Ingrese su Contraseña" name="pass1">
+                                            id="exampleInputPassword" placeholder="Ingrese su Contraseña" name="pass1" required>
                                     </div>
                                     <div class="col-sm-6 mb-3 mb-sm-0x">
                                         <input type="password" class="form-control form-control-user"
-                                            id="exampleRepeatPassword" placeholder="Repita su Contraseña" name="pass2">
+                                            id="exampleRepeatPassword" placeholder="Repita su Contraseña" name="pass2" required>
                                     </div>
                                 </div>
                                 <button type="submit" class="btn btn-primary btn-user btn-block">REGISTRAR</button>
                             </form>
                             <hr>
                             <div class="text-center">
-                                <a class="small" href="index.html">¿Ya tengo una Cuenta</a>
+                                <a class="small" href="start1.php">¿Ya tengo una Cuenta</a>
                             </div>
                         </div>
                     </div>

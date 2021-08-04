@@ -10,18 +10,17 @@ if(!$conn){
 } else{
     $nombre = $_POST['nombre'];
     $correo = $_POST['correo'];
-    $pass1 = base64_encode($_POST['pass1']);
-    $pass2 = base64_encode($_POST['pass2']);
+    $pass1 = $_POST['pass1'];
+    $pass2 = $_POST['pass2'];
     if($pass1 == $pass2){
         $sql = "INSERT INTO usuario (nombre, correo, pass) VALUE ('".$nombre."' , '".$correo."' , '".$pass1."')";
-
         if(mysqli_query($conn,$sql)){
-            header("Location:index.html");
+            header("Location:start1.php?estado=1");
         } else{
             echo "ERROR AL INTRODUCIR LOS DATOS" . mysqli_error($conn);
         }
     } else{
-        echo "Las Contraseñas No Coinciden";
+        header("Location:register1.php?estado=1");
     }
 }
 ?>

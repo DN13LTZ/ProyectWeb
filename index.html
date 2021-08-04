@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Proyect X - Inicio</title>
+    <title>Proyect X</title>
 
     <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -22,49 +22,147 @@
 
 </head>
 
-<body class="bg-gradient-primary">
+<body id="page-top">
 
-    <div class="container">
+    <!-- Page Wrapper -->
+    <div id="wrapper">
 
-        <!-- Outer Row -->
-        <div class="row justify-content-center">
+        <!-- Content Wrapper -->
+        <div id="content-wrapper" class="d-flex flex-column">
 
-            <div class="col-xl-10 col-lg-12 col-md-9">
+            <!-- Main Content -->
+            <div id="content">
 
-                <div class="card o-hidden border-0 shadow-lg my-5">
-                    <div class="card-body p-0">
-                        <!-- Nested Row within Card Body -->
-                        <div class="row">
-                            <div class="col-lg-5 d-none d-lg-block">
-                                <img src="img/D@N13LTZ.png" alt="kali" style="height: 385px;">
+                <!-- Topbar -->
+                <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+
+                    <!-- Topbar Navbar -->
+                    <ul class="navbar-nav ml-auto">
+
+                        <div class="topbar-divider d-none d-sm-block"></div>
+
+                        <!-- Nav Item - User Information -->
+                        <li class="nav-item dropdown no-arrow">
+                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Iniciar</span>
+                                <img class="img-profile rounded-circle" src="img/undraw_rocket.svg">
+                            </a>
+                            <!-- Dropdown - User Information -->
+                            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                                aria-labelledby="userDropdown">
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#" data-toggle="modal"
+                                    data-target="#logoutModal">
+                                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Iniciar Sesión
+                                </a>
                             </div>
-                            <div class="col-lg-7">
-                                <div class="p-5">
+                        </li>
+
+                    </ul>
+
+                </nav>
+                <!-- End of Topbar -->
+
+                <!-- Begin Page Content -->
+                <div class="container-fluid">
+
+                    <!-- Content Row -->
+                    <div class="row">
+
+                        <!-- Content Column -->
+                        <div class="col-lg-6 mb-4">
+
+                            <!-- Project Card Example -->
+                            <div class="card shadow mb-4">
+                                <div class="card-header py-3">
+                                    <h6 class="m-0 font-weight-bold text-primary">COMPUTADORAS</h6>
+                                </div>
+                                <div class="card-body">
+                                    <p>
+                                        La computadora,también denominada computador u ordenador​, es una máquina digital 
+                                        programable que ejecuta una serie de comandos para procesar los datos de entrada, 
+                                        obteniendo convenientemente información que posteriormente se envía a las unidades 
+                                        de salida. Una computadora está formada físicamente por numerosos circuitos 
+                                        integrados y varios componentes de apoyo, extensión y accesorios, que en conjunto 
+                                        pueden ejecutar tareas diversas con suma rapidez y bajo el control de un programa 
+                                        (software).
+                                    </p>
                                     <div class="text-center">
-                                        <h1 class="h4 text-gray-900 mb-4">Ingresa a tu Usuario</h1>
-                                    </div>
-                                    <form class="user" action="iniciar.php" method="POST">
-                                        <div class="form-group">
-                                                <input type="email" class="form-control form-control-user"
-                                                    id="exampleInputEmail" aria-describedby="emailHelp"
-                                                    placeholder="Ingrese su Correo Electronico" name="correo" required>
-                                        </div>
-                                        <div class="form-group">
-                                            <input type="password" class="form-control form-control-user"
-                                                id="exampleInputPassword" placeholder="Ingrese su Contraseña"
-                                                name="pass1" required>
-                                        </div>
-                                        <button type="submit"
-                                            class="btn btn-primary btn-user btn-block">INGRESAR</button>
-                                    </form>
-                                    <hr>
-                                    <div class="text-center">
-                                        <a class="small" href="register.html">Crear Cuenta</a>
+                                        <img class="img-fluid px-3 px-sm-4 mt-3 mb-4" style="width: 30rem;"
+                                            src="img/compu.jpg" alt="300PPX">
                                     </div>
                                 </div>
                             </div>
+
+                        </div>
+
+                        <div class="col-lg-6 mb-4">
+
+                            <!-- Illustrations -->
+                            <div class="card shadow mb-4">
+                                <div class="card-header py-3">
+                                    <h6 class="m-0 font-weight-bold text-primary">Kali Linux</h6>
+                                </div>
+                                <div class="card-body">
+                                    <div class="text-center">
+                                        <img class="img-fluid px-3 px-sm-4 mt-3 mb-4" style="width: 15rem;"
+                                            src="img/kal1.png" alt="100PPX">
+                                    </div>
+                                    <p>Kali Linux es una distribución basada en Debian GNU/Linux diseñada principalmente 
+                                    para la auditoría y seguridad informática en general. Fue fundada y es mantenida 
+                                    por Offensive Security Ltd. Mati Aharoni y Devon Kearns, ambos pertenecientes al equipo
+                                    de Offensive Security, desarrollaron la distribución a partir de la reescritura de 
+                                    BackTrack, que se podría denominar como la antecesora de Kali Linux.</p>
+                                </div>
+                            </div>
+
                         </div>
                     </div>
+
+                </div>
+                <!-- /.container-fluid -->
+
+            </div>
+            <!-- End of Main Content -->
+
+            <!-- Footer -->
+            <footer class="sticky-footer bg-white">
+                <div class="container my-auto">
+                    <div class="copyright text-center my-auto">
+                        <span>Copyright &copy; Your Website 2020</span>
+                    </div>
+                </div>
+            </footer>
+            <!-- End of Footer -->
+
+        </div>
+        <!-- End of Content Wrapper -->
+
+    </div>
+    <!-- End of Page Wrapper -->
+
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+        <i class="fas fa-angle-up"></i>
+    </a>
+
+    <!-- Logout Modal-->
+    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">¿List@ Para Conocer La Pagina?</h5>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">Seleccione una opcion para ingesar a la pagina.</div>
+                <div class="modal-footer">
+                    <a class="btn btn-primary" href="register1.php">Crear Cuenta</a>
+                    <a class="btn btn-primary" href="start1.php">Iniciar Sesión</a>
                 </div>
             </div>
         </div>
@@ -79,6 +177,13 @@
 
     <!-- Custom scripts for all pages-->
     <script src="js/sb-admin-2.min.js"></script>
+
+    <!-- Page level plugins -->
+    <script src="vendor/chart.js/Chart.min.js"></script>
+
+    <!-- Page level custom scripts -->
+    <script src="js/demo/chart-area-demo.js"></script>
+    <script src="js/demo/chart-pie-demo.js"></script>
 
 </body>
 

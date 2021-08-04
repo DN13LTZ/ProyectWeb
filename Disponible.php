@@ -58,7 +58,7 @@ if(!isset($correo)){
         <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="menu.html">
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="Disponible.php">
                 <div class="sidebar-brand-icon rotate-n-15">
                     <i class="fas fa-laugh-wink"></i>
                 </div>
@@ -66,16 +66,6 @@ if(!isset($correo)){
             </a>
 
             <!-- Divider -->
-            <hr class="sidebar-divider my-0">
-
-            <!-- Nav Item - Dashboard -->
-            <li class="nav-item">
-                <a class="nav-link" href="menu.php">
-                    <i class="fas fa-fw fa-tachometer-alt"></i>
-                    <span>Inicio</span></a>
-            </li>
-
-            <!-- Linea de División -->
             <hr class="sidebar-divider">
 
             <!-- Heading -->
@@ -85,9 +75,16 @@ if(!isset($correo)){
 
             <!-- Nav Item - Tables -->
             <li class="nav-item active">
-                <a class="nav-link" href="tables.html">
+                <a class="nav-link" href="disponible.php">
                     <i class="fas fa-fw fa-table"></i>
                     <span>Productos</span></a>
+            </li>
+
+            <!-- Nav Item - Tables -->
+            <li class="nav-item active">
+                <a class="nav-link" href="Registrar.php">
+                    <i class="fas fa-fw fa-table"></i>
+                    <span>Registrar</span></a>
             </li>
             <!-- Linea de División -->
             <hr class="sidebar-divider d-none d-md-block">
@@ -114,7 +111,7 @@ if(!isset($correo)){
                                     echo($correo)
                                 ?></span>
                                 <img class="img-profile rounded-circle"
-                                    src="img/undraw_profile.svg">
+                                    src="img/undraw_profile_2.svg">
                             </a>
                             <!-- Opciones de Usuario -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"

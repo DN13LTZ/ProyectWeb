@@ -22,10 +22,10 @@ $cadena = mysqli_fetch_array($resultado);
 
 if($cadena['contar'] > 0){
     $_SESSION['uss'] = $correo;
-    header("Location: menu.php");
+    header("Location: disponible.php");
 } else{
 //Datos Incorrectos
-    echo "ERROR AL INTRODUCIR LOS DATOS" . mysqli_error($conn);
+header("Location: start1.php?estado=2");
 }
 }
 ?>
